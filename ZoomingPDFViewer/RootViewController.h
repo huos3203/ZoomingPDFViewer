@@ -48,13 +48,17 @@
 #import <UIKit/UIKit.h>
 #import <FastPdfKit/FastPdfKit.h>
 
+
 @class MFDocumentManager;
 
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate>
+@interface RootViewController : MFDocumentViewController <UIPageViewControllerDelegate,
+OutlineViewControllerDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
+@property (nonatomic, retain) UIPopoverController * reusablePopover;
 
 
+- (IBAction)ibaOutline:(UIButton *)sender;
 @end

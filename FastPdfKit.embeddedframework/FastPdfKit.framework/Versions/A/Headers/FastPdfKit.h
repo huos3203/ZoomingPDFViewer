@@ -12,6 +12,7 @@
 #import "MFOverlayDrawable.h"
 #import "MFOverlayTouchable.h"
 #import "MFPDFOutlineEntry.h"
+#import "MFPDFOutlineRemoteEntry.h"
 #import "mfprofile.h"
 #import "MFTextItem.h"
 #import "MiniSearchView.h"

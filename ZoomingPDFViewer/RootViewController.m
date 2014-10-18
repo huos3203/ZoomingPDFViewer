@@ -50,15 +50,69 @@
 #import "ModelController.h"
 
 #import "DataViewController.h"
+#import "MyOutLineViewController.h"
+
+#define FPK_REUSABLE_VIEW_NONE 0
+#define FPK_REUSABLE_VIEW_SEARCH 1
+#define FPK_REUSABLE_VIEW_TEXT 2
+#define FPK_REUSABLE_VIEW_OUTLINE 3
+#define FPK_REUSABLE_VIEW_BOOKMARK 4
+
+
+static const NSInteger FPKReusableViewNone = FPK_REUSABLE_VIEW_NONE;
+static const NSInteger FPKReusableViewSearch = FPK_REUSABLE_VIEW_SEARCH;
+static const NSInteger FPKReusableViewText = FPK_REUSABLE_VIEW_TEXT;
+static const NSInteger FPKReusableViewOutline = FPK_REUSABLE_VIEW_OUTLINE;
+static const NSInteger FPKReusableViewBookmarks = FPK_REUSABLE_VIEW_BOOKMARK;
+
+
+#define FPK_SEARCH_VIEW_MODE_MINI 0
+#define FPK_SEARCH_VIEW_MODE_FULL 1
+
+static const NSInteger FPKSearchViewModeMini = FPK_SEARCH_VIEW_MODE_MINI;
+static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
+
+
 
 @interface RootViewController ()
 @property (readonly, strong, nonatomic) ModelController *modelController;
 @end
 
 @implementation RootViewController
+{
+    NSUInteger currentReusableView;         // This flag is used to keep track of what alternate controller is displayed to the user
+    NSUInteger currentSearchViewMode;
+}
 
 @synthesize modelController = _modelController;
 
+-(id)init
+{
+    
+    //
+    //	Here we call the superclass initWithDocumentManager passing the very same MFDocumentManager
+    //	we used to initialize this class. However, since you probably want to track which document are
+    //	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
+    //	as long as you pass an instance of it to the superclass initializer.
+	
+    NSString *documentPath = [[NSBundle mainBundle]pathForResource:@"11" ofType:@"pdf"];
+    NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
+    MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
+    
+	if((self = [super initWithDocumentManager:aDocManager])) {
+		[self setDocumentDelegate:self];
+        [self setAutoMode:MFDocumentAutoModeOverflow];
+        [self setAutomodeOnRotation:YES];
+//        [self modelController];
+	}
+	return self;
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -67,7 +121,8 @@
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
 
-    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -152,5 +207,169 @@
     return UIPageViewControllerSpineLocationMid;
 }
 
+
+- (IBAction)ibaOutline:(UIButton *)sender {
+    
+    MyOutLineViewController *outlineVC = nil;
+    
+	if (currentReusableView != FPK_REUSABLE_VIEW_OUTLINE) {
+		
+        currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
+		
+        outlineVC = [[MyOutLineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        [outlineVC setDelegate:self];
+		
+		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
+		// this array and the openentries array somewhere and set them again before present the view to the user again.
+		
+//		[outlineVC setOutlineEntries:[[self document] outline]];
+        
+        CGSize popoverContentSize = CGSizeMake(372, 530);
+        
+        UIView * sourceView = self.view;
+        CGRect sourceRect = [self.view convertRect:sender.bounds fromView:sender];
+        
+        [self presentViewController:outlineVC fromRect:sourceRect sourceView:sourceView contentSize:popoverContentSize];
+        
+        //		[outlineVC release];
+        
+	} else {
+        
+        [self dismissAlternateViewController];
+        
+    }
+}
+
+
+-(void)dismissAlternateViewController {
+    
+    // This is just an utility method that will call the appropriate dismissal procedure depending
+    // on which alternate controller is visible to the user.
+    
+    switch(currentReusableView) {
+            
+        case FPKReusableViewNone:
+            break;
+            
+        case FPKReusableViewText:
+            
+            if(self.presentedViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+            
+            currentReusableView = FPKReusableViewNone;
+            
+            break;
+            
+        case FPKReusableViewOutline:
+        case FPKReusableViewBookmarks:
+            
+            // Same procedure for both outline and bookmark.
+            
+            if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+            {
+                
+#ifdef __IPHONE_8_0
+                if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1)
+                {
+                    if(self.presentedViewController) {
+                        [self dismissViewControllerAnimated:YES completion:nil];
+                    }
+                }
+                else
+#endif
+                {
+                    
+                    [_reusablePopover dismissPopoverAnimated:YES];
+                }
+                
+            } else {
+                
+                /* On iPad iOS 8 and iPhone whe have a presented view controller */
+                
+                if(self.presentedViewController) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+            }
+            currentReusableView = FPKReusableViewNone;
+            break;
+            
+        case FPKReusableViewSearch:
+            
+            if(currentSearchViewMode == FPKSearchViewModeFull) {
+                
+                //                [searchManager cancelSearch];
+                //                [self dismissSearchViewController:searchViewController];
+                currentReusableView = FPKReusableViewNone;
+                
+            } else if (currentSearchViewMode == FPKSearchViewModeMini) {
+                //                [searchManager cancelSearch];
+                //                [self dismissMiniSearchView];
+                currentReusableView = FPKReusableViewNone;
+            }
+            
+            // Cancel search and remove the controller.
+            
+            break;
+        default: break;
+    }
+}
+
+-(void)presentViewController:(UIViewController *)controller fromRect:(CGRect)rect sourceView:(UIView *)view contentSize:(CGSize)contentSize {
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+#ifdef __IPHONE_8_0
+        if(NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
+            
+            controller.modalPresentationStyle = UIModalPresentationPopover;
+            
+            UIPopoverPresentationController * popoverPresentationController = controller.popoverPresentationController;
+            
+            popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+            popoverPresentationController.sourceRect = rect;
+            popoverPresentationController.sourceView = view;
+            popoverPresentationController.delegate = self;
+            
+            [self presentViewController:controller animated:YES completion:nil];
+            
+        } else
+#endif
+        {
+            
+            [self prepareReusablePopoverControllerWithController:controller];
+            
+            [_reusablePopover setPopoverContentSize:contentSize animated:YES];
+            [_reusablePopover presentPopoverFromRect:rect inView:view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
+        
+    } else {
+        
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+-(UIPopoverController *)prepareReusablePopoverControllerWithController:(UIViewController *)controller {
+    
+    UIPopoverController * popoverController = nil;
+    
+    if(!_reusablePopover) {
+        
+        popoverController = [[UIPopoverController alloc]initWithContentViewController:controller];
+        popoverController.delegate = self;
+        self.reusablePopover = popoverController;
+        self.reusablePopover.delegate = self;
+        
+    } else {
+        
+        [_reusablePopover setContentViewController:controller animated:YES];
+    }
+    
+    return _reusablePopover;
+}
+
+-(void)dismissOutlineViewController:(OutlineViewController *)ovc
+{
+    [self dismissAlternateViewController];
+}
 
 @end
