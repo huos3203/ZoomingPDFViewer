@@ -99,23 +99,43 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
     MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
     
+    
+    // This delegate has been added just to manage the links between pdfs, skip it if you just need standard visualization
+    
 	if((self = [super initWithDocumentManager:aDocManager])) {
 		[self setDocumentDelegate:self];
         [self setAutoMode:MFDocumentAutoModeOverflow];
         [self setAutomodeOnRotation:YES];
-//        [self modelController];
+//        [self setDocumentId:@"11"];   // We use the filename as an ID. You can use whaterver you like, like
+//        
+////        [self setDelegate:self];
+////        OverlayManager *ovManager = [[OverlayManager alloc] init];
+//        [self addOverlayDataSource:nil];
+//
+////        [self modelController];
 	}
 	return self;
 
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-
-}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *bar = [[UIBarButtonItem alloc] init];
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    
+    // 设置导航栏背景
+    [navBar setBackgroundImage:[UIImage imageNamed:@"default.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 20)];
+    [backButton setTitle:@"不读了" forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor colorWithRed:0.0 / 255.0 green:86.0 / 255 blue:44 / 255 alpha:1.0] forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor colorWithRed:18.0 / 255.0 green:141.0 / 255 blue:66.0 / 255 alpha:1.0] forState:UIControlStateHighlighted];
+    [backButton setImage:[UIImage imageNamed:@"back1.png"] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"back2.png"] forState:UIControlStateHighlighted];
+    [backButton addTarget:self action:@selector(ibaOutline:) forControlEvents:UIControlEventTouchDown];
+    self.navigationItem.RightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];

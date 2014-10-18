@@ -40,7 +40,11 @@
 -(IBAction)actionOpenPlainDocument:(id)sender{
     
     RootViewController *rootvc = [[RootViewController alloc] init];
-    [self.navigationController pushViewController:rootvc animated:NO];
+    UINavigationController *na = [[UINavigationController alloc] initWithRootViewController:rootvc];
+//    [self.navigationController pushViewController:na animated:NO];
+        UIWindow * window = [[[UIApplication sharedApplication] windows] firstObject];
+    window.rootViewController = na;
+//    [self presentViewController:rootvc animated:YES completion:nil];
     
 //    /** Set document name */
 //    NSString *documentName = @"11";
@@ -71,5 +75,10 @@
     
     /** Release the pdf controller*/
 //    [pdfViewController release];
+}
+
+-(void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    
 }
 @end
