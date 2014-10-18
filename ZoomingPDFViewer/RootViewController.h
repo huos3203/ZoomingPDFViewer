@@ -46,9 +46,15 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <FastPdfKit/FastPdfKit.h>
+
+@class MFDocumentManager;
+
 
 @interface RootViewController : UIViewController <UIPageViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
+
+
 
 @end
