@@ -178,7 +178,7 @@
             [delegate myOutlineViewController:self didRequestPage:pageNumber];
         }
 	}
-	
+    
 	// We need to add/remove a certain number of rows depending on how
 	// many entries are visible in the tree branch we are going to open/close. Do do that,
 	// we get the selected entry and traverse it breadth first and add the children if the node

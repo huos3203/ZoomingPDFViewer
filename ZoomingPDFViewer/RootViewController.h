@@ -47,14 +47,18 @@
 
 #import <UIKit/UIKit.h>
 #import "MyOutlineViewControllerDelegate.h"
+#import "BookmarkViewControllerDelegate.h"
 
 @interface RootViewController : UIViewController <UIPageViewControllerDelegate,
-MyOutlineViewControllerDelegate,UIPopoverControllerDelegate>
+MyOutlineViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
 @property (nonatomic, retain) UIPopoverController * reusablePopover;
 
+@property(nonatomic,strong) NSString *pdfDocument;
+
+- (IBAction)ibaBookmarks:(UIButton *)sender;
 
 - (IBAction)ibaOutline:(UIButton *)sender;
 @end

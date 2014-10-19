@@ -52,6 +52,10 @@
 #import "DataViewController.h"
 #import "MyOutLineViewController.h"
 #import "PDFParser.h"
+#import "BookmarkViewController.h"
+
+
+#define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
 
 #define FPK_REUSABLE_VIEW_NONE 0
 #define FPK_REUSABLE_VIEW_SEARCH 1
@@ -91,6 +95,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 {
     [super viewDidLoad];
     
+    _pdfDocument = @"Manual.pdf";
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -196,7 +201,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 		// this array and the openentries array somewhere and set them again before present the view to the user again.
-		PDFParser *pdf = [[PDFParser alloc] initWithFileName:@"11.pdf"];
+		PDFParser *pdf = [[PDFParser alloc] initWithFileName:_pdfDocument];
 		[outlineVC setOutlineEntries:[[pdf getPDFContents] mutableCopy]];
         
         CGSize popoverContentSize = CGSizeMake(372, 530);
@@ -351,7 +356,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 -(void)myOutlineViewController:(MyOutlineViewController *)ovc didRequestPage:(NSUInteger)page
 {
 //    int page1 =[[NSNumber numberWithUnsignedInteger:page] intValue];
-    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:page-1 storyboard:self.storyboard];
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:page storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -367,4 +372,64 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 }
 
+
+#pragma mark -
+#pragma mark BookmarkViewController, _Delegate and _Actions
+
+
+-(void)dismissBookmarkViewController:(BookmarkViewController *)bvc {
+	
+    [self dismissAlternateViewController];
+}
+
+-(void)bookmarkViewController:(BookmarkViewController *)bvc didRequestPage:(NSUInteger)page{
+	
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:page storyboard:self.storyboard];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+    
+    [self dismissAlternateViewController];
+}
+
+-(IBAction) ibaBookmarks:(UIButton *)bookmarksButton
+{
+	
+    //
+	//	We create an instance of the BookmarkViewController and push it onto the stack as a model view controller, but
+	//	you can also push the controller with the navigation controller or use an UIActionSheet.
+	
+    BookmarkViewController *bookmarksVC = nil;
+    
+	if (currentReusableView == FPK_REUSABLE_VIEW_BOOKMARK) {
+        
+		[self dismissAlternateViewController];
+		
+	} else {
+		
+        currentReusableView = FPK_REUSABLE_VIEW_BOOKMARK;
+        
+		bookmarksVC = [[BookmarkViewController alloc]initWithNibName:@"BookmarkView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+		bookmarksVC.delegate = self;
+        
+        CGSize popoverContentSize = CGSizeMake(372, 650);
+        
+        UIView * sourceView = self.view;
+        CGRect sourceRect = [self.view convertRect:bookmarksButton.bounds fromView:bookmarksButton];
+        
+        [self presentViewController:bookmarksVC fromRect:sourceRect sourceView:sourceView contentSize:popoverContentSize];
+        
+//		[bookmarksVC release];
+	}
+}
+
+-(NSString *)documentId
+{
+    return _pdfDocument;
+}
+-(NSUInteger)page
+{
+    DataViewController *currentViewController = self.pageViewController.viewControllers[0];
+    NSUInteger indexOfCurrentViewController = [self.modelController indexOfViewController:currentViewController];
+    return indexOfCurrentViewController;
+}
 @end

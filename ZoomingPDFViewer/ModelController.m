@@ -69,7 +69,7 @@
     self = [super init];
     if (self) {
         // Create the data model.
-        NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"11.pdf" withExtension:nil];
+        NSURL *pdfURL = [[NSBundle mainBundle] URLForResource:@"Manual.pdf" withExtension:nil];
 		self.pdf = CGPDFDocumentCreateWithURL( (__bridge CFURLRef) pdfURL );
         self.numberOfPages = (int)CGPDFDocumentGetNumberOfPages( self.pdf );
         if( self.numberOfPages % 2 ) self.numberOfPages++;
