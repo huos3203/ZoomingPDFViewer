@@ -46,14 +46,10 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <FastPdfKit/FastPdfKit.h>
+#import "MyOutlineViewControllerDelegate.h"
 
-
-@class MFDocumentManager;
-
-
-@interface RootViewController : MFDocumentViewController <UIPageViewControllerDelegate,
-OutlineViewControllerDelegate,MFDocumentViewControllerDelegate,UIPopoverControllerDelegate>
+@interface RootViewController : UIViewController <UIPageViewControllerDelegate,
+MyOutlineViewControllerDelegate,UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 

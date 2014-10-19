@@ -6,7 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyOutLineViewController">
             <connections>
-                <outlet property="outlineTableView" destination="wUR-e0-O8C" id="nOO-En-MPZ"/>
+                <outlet property="outlineTableView" destination="wUR-e0-O8C" id="zWV-x9-65e"/>
+                <outlet property="view" destination="1" id="I9b-Ub-5f9"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

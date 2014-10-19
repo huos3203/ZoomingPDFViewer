@@ -7,20 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8422129619F26FCA00D98B3C /* FastPdfKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8422129119F26FCA00D98B3C /* FastPdfKit.framework */; };
-		8422129719F26FCA00D98B3C /* FastPdfKitFramework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8422129319F26FCA00D98B3C /* FastPdfKitFramework.xcconfig */; };
-		8422129819F26FCA00D98B3C /* FPKReaderBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8422129419F26FCA00D98B3C /* FPKReaderBundle.bundle */; };
-		8422129919F26FCA00D98B3C /* Snippets.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8422129519F26FCA00D98B3C /* Snippets.txt */; };
 		8422129C19F273AD00D98B3C /* FastPDFKitReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422129B19F273AD00D98B3C /* FastPDFKitReaderViewController.m */; };
-		842212A119F2786800D98B3C /* MyOutLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842212A019F2786800D98B3C /* MyOutLineViewController.m */; };
-		842212A319F278EC00D98B3C /* MyOutLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842212A219F278EC00D98B3C /* MyOutLineView.xib */; };
 		842212A519F280C700D98B3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212A419F280C700D98B3C /* AVFoundation.framework */; };
 		842212A919F2812800D98B3C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212A819F2812800D98B3C /* MediaPlayer.framework */; };
 		842212AB19F2814100D98B3C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212AA19F2814100D98B3C /* AudioToolbox.framework */; };
 		842212AD19F2816A00D98B3C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212AC19F2816A00D98B3C /* CoreText.framework */; };
 		842212B019F2826800D98B3C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212AE19F281FC00D98B3C /* Security.framework */; };
-		842212B319F2BD7000D98B3C /* eeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842212B219F2BD7000D98B3C /* eeeViewController.m */; };
 		84404BDC19F20D8B00DB464D /* 11.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84404BDB19F20D8B00DB464D /* 11.pdf */; };
+		8496885719F35B4000E8BD9A /* MyOutLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8496885319F35B4000E8BD9A /* MyOutLineView.xib */; };
+		8496885819F35B4000E8BD9A /* MyOutLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8496885519F35B4000E8BD9A /* MyOutLineViewController.m */; };
+		8496885F19F35B6400E8BD9A /* VoyeurNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8496885D19F35B6400E8BD9A /* VoyeurNode.m */; };
+		8496886219F35C7B00E8BD9A /* PDFParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8496886119F35C7B00E8BD9A /* PDFParser.m */; };
 		C4A13BCB192199FE00620718 /* input_pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C4A13BCA192199FD00620718 /* input_pdf.pdf */; };
 		C4C9E03517949AAE00F56C1C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C9E03417949AAE00F56C1C /* UIKit.framework */; };
 		C4C9E03717949AAE00F56C1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C9E03617949AAE00F56C1C /* Foundation.framework */; };
@@ -44,24 +41,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8422129119F26FCA00D98B3C /* FastPdfKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FastPdfKit.framework; sourceTree = "<group>"; };
-		8422129319F26FCA00D98B3C /* FastPdfKitFramework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FastPdfKitFramework.xcconfig; sourceTree = "<group>"; };
-		8422129419F26FCA00D98B3C /* FPKReaderBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FPKReaderBundle.bundle; sourceTree = "<group>"; };
-		8422129519F26FCA00D98B3C /* Snippets.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snippets.txt; sourceTree = "<group>"; };
 		8422129A19F273AD00D98B3C /* FastPDFKitReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastPDFKitReaderViewController.h; path = ZoomingPDFViewer/FastPdfKitReader/FastPDFKitReaderViewController.h; sourceTree = SOURCE_ROOT; };
 		8422129B19F273AD00D98B3C /* FastPDFKitReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastPDFKitReaderViewController.m; path = ZoomingPDFViewer/FastPdfKitReader/FastPDFKitReaderViewController.m; sourceTree = SOURCE_ROOT; };
-		8422129F19F2786800D98B3C /* MyOutLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOutLineViewController.h; sourceTree = SOURCE_ROOT; };
-		842212A019F2786800D98B3C /* MyOutLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOutLineViewController.m; sourceTree = SOURCE_ROOT; };
-		842212A219F278EC00D98B3C /* MyOutLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyOutLineView.xib; path = ZoomingPDFViewer/OutLine/MyOutLineView.xib; sourceTree = SOURCE_ROOT; };
 		842212A419F280C700D98B3C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		842212A619F280EA00D98B3C /* MediaAccessibility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaAccessibility.framework; path = System/Library/Frameworks/MediaAccessibility.framework; sourceTree = SDKROOT; };
 		842212A819F2812800D98B3C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		842212AA19F2814100D98B3C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		842212AC19F2816A00D98B3C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		842212AE19F281FC00D98B3C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		842212B119F2BD7000D98B3C /* eeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eeeViewController.h; sourceTree = SOURCE_ROOT; };
-		842212B219F2BD7000D98B3C /* eeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eeeViewController.m; sourceTree = SOURCE_ROOT; };
 		84404BDB19F20D8B00DB464D /* 11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 11.pdf; sourceTree = SOURCE_ROOT; };
+		8496885319F35B4000E8BD9A /* MyOutLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOutLineView.xib; sourceTree = "<group>"; };
+		8496885419F35B4000E8BD9A /* MyOutLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOutLineViewController.h; sourceTree = "<group>"; };
+		8496885519F35B4000E8BD9A /* MyOutLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOutLineViewController.m; sourceTree = "<group>"; };
+		8496885619F35B4000E8BD9A /* MyOutlineViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOutlineViewControllerDelegate.h; sourceTree = "<group>"; };
+		8496885C19F35B6400E8BD9A /* VoyeurNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoyeurNode.h; sourceTree = "<group>"; };
+		8496885D19F35B6400E8BD9A /* VoyeurNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoyeurNode.m; sourceTree = "<group>"; };
+		8496886019F35C7B00E8BD9A /* PDFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFParser.h; sourceTree = "<group>"; };
+		8496886119F35C7B00E8BD9A /* PDFParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFParser.m; sourceTree = "<group>"; };
 		C4A13BCA192199FD00620718 /* input_pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = input_pdf.pdf; sourceTree = SOURCE_ROOT; };
 		C4C9E03117949AAE00F56C1C /* ZoomingPDFViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomingPDFViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C9E03417949AAE00F56C1C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -105,7 +101,6 @@
 				842212A519F280C700D98B3C /* AVFoundation.framework in Frameworks */,
 				C4F73354191DA9AB009F63EC /* QuartzCore.framework in Frameworks */,
 				C4C9E03517949AAE00F56C1C /* UIKit.framework in Frameworks */,
-				8422129619F26FCA00D98B3C /* FastPdfKit.framework in Frameworks */,
 				C4C9E03717949AAE00F56C1C /* Foundation.framework in Frameworks */,
 				C4C9E03917949AAE00F56C1C /* CoreGraphics.framework in Frameworks */,
 				C4C9E0611794AE7800F56C1C /* QuickLook.framework in Frameworks */,
@@ -115,25 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8422129019F26FCA00D98B3C /* FastPdfKit.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				8422129119F26FCA00D98B3C /* FastPdfKit.framework */,
-				8422129219F26FCA00D98B3C /* Resources */,
-			);
-			path = FastPdfKit.embeddedframework;
-			sourceTree = "<group>";
-		};
-		8422129219F26FCA00D98B3C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8422129319F26FCA00D98B3C /* FastPdfKitFramework.xcconfig */,
-				8422129419F26FCA00D98B3C /* FPKReaderBundle.bundle */,
-				8422129519F26FCA00D98B3C /* Snippets.txt */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		8422129D19F273B800D98B3C /* FastPdfKitReader */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,15 +119,29 @@
 			name = FastPdfKitReader;
 			sourceTree = "<group>";
 		};
-		8422129E19F277B000D98B3C /* OutLine */ = {
+		8496885219F35B4000E8BD9A /* OutLine */ = {
 			isa = PBXGroup;
 			children = (
-				8422129F19F2786800D98B3C /* MyOutLineViewController.h */,
-				842212A019F2786800D98B3C /* MyOutLineViewController.m */,
-				842212A219F278EC00D98B3C /* MyOutLineView.xib */,
+				8496885319F35B4000E8BD9A /* MyOutLineView.xib */,
+				8496885419F35B4000E8BD9A /* MyOutLineViewController.h */,
+				8496885519F35B4000E8BD9A /* MyOutLineViewController.m */,
+				8496885619F35B4000E8BD9A /* MyOutlineViewControllerDelegate.h */,
 			);
 			name = OutLine;
-			sourceTree = "<group>";
+			path = ZoomingPDFViewer/OutLine;
+			sourceTree = SOURCE_ROOT;
+		};
+		8496885919F35B6400E8BD9A /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				8496885C19F35B6400E8BD9A /* VoyeurNode.h */,
+				8496885D19F35B6400E8BD9A /* VoyeurNode.m */,
+				8496886019F35C7B00E8BD9A /* PDFParser.h */,
+				8496886119F35C7B00E8BD9A /* PDFParser.m */,
+			);
+			name = Node;
+			path = ZoomingPDFViewer/Node;
+			sourceTree = SOURCE_ROOT;
 		};
 		C4C9E02817949AAE00F56C1C = {
 			isa = PBXGroup;
@@ -180,7 +170,6 @@
 				842212A819F2812800D98B3C /* MediaPlayer.framework */,
 				842212A619F280EA00D98B3C /* MediaAccessibility.framework */,
 				842212A419F280C700D98B3C /* AVFoundation.framework */,
-				8422129019F26FCA00D98B3C /* FastPdfKit.embeddedframework */,
 				C4F73353191DA9AB009F63EC /* QuartzCore.framework */,
 				C4C9E0601794AE7800F56C1C /* QuickLook.framework */,
 				C4C9E03417949AAE00F56C1C /* UIKit.framework */,
@@ -193,7 +182,8 @@
 		C4C9E03A17949AAE00F56C1C /* ZoomingPDFViewer */ = {
 			isa = PBXGroup;
 			children = (
-				8422129E19F277B000D98B3C /* OutLine */,
+				8496885919F35B6400E8BD9A /* Node */,
+				8496885219F35B4000E8BD9A /* OutLine */,
 				8422129D19F273B800D98B3C /* FastPdfKitReader */,
 				C4F7335519215B5A009F63EC /* AppDelegate.h */,
 				C4F7335619215B5A009F63EC /* AppDelegate.m */,
@@ -208,8 +198,6 @@
 				C4F7336119215B5A009F63EC /* TiledPDFView.h */,
 				C4F7336219215B5A009F63EC /* TiledPDFView.m */,
 				C4C9E03B17949AAE00F56C1C /* Supporting Files */,
-				842212B119F2BD7000D98B3C /* eeeViewController.h */,
-				842212B219F2BD7000D98B3C /* eeeViewController.m */,
 			);
 			name = ZoomingPDFViewer;
 			path = PageBasedPDF;
@@ -284,14 +272,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8422129919F26FCA00D98B3C /* Snippets.txt in Resources */,
 				C4F7337C19215B72009F63EC /* MainStoryboard_iPhone.storyboard in Resources */,
-				8422129719F26FCA00D98B3C /* FastPdfKitFramework.xcconfig in Resources */,
 				84404BDC19F20D8B00DB464D /* 11.pdf in Resources */,
 				C4F7337919215B72009F63EC /* Default@2x.png in Resources */,
-				842212A319F278EC00D98B3C /* MyOutLineView.xib in Resources */,
+				8496885719F35B4000E8BD9A /* MyOutLineView.xib in Resources */,
 				C4F7337A19215B72009F63EC /* InfoPlist.strings in Resources */,
-				8422129819F26FCA00D98B3C /* FPKReaderBundle.bundle in Resources */,
 				C4F7337719215B72009F63EC /* Default-568h@2x.png in Resources */,
 				C4F7337819215B72009F63EC /* Default.png in Resources */,
 				C4F7338119215C25009F63EC /* ReadMe.txt in Resources */,
@@ -309,13 +294,14 @@
 			files = (
 				C4F7336919215B5A009F63EC /* TiledPDFView.m in Sources */,
 				C4F7336319215B5A009F63EC /* AppDelegate.m in Sources */,
+				8496885F19F35B6400E8BD9A /* VoyeurNode.m in Sources */,
 				8422129C19F273AD00D98B3C /* FastPDFKitReaderViewController.m in Sources */,
 				C4F7336819215B5A009F63EC /* RootViewController.m in Sources */,
 				C4F7336619215B5A009F63EC /* PDFScrollView.m in Sources */,
 				C4F7336519215B5A009F63EC /* ModelController.m in Sources */,
-				842212A119F2786800D98B3C /* MyOutLineViewController.m in Sources */,
+				8496885819F35B4000E8BD9A /* MyOutLineViewController.m in Sources */,
+				8496886219F35C7B00E8BD9A /* PDFParser.m in Sources */,
 				C4F7337E19215B72009F63EC /* main.m in Sources */,
-				842212B319F2BD7000D98B3C /* eeeViewController.m in Sources */,
 				C4F7336419215B5A009F63EC /* DataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,7 +396,6 @@
 		};
 		C4C9E05E17949AAE00F56C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8422129319F26FCA00D98B3C /* FastPdfKitFramework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -431,7 +416,6 @@
 		};
 		C4C9E05F17949AAE00F56C1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8422129319F26FCA00D98B3C /* FastPdfKitFramework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (

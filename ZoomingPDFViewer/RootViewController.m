@@ -51,6 +51,7 @@
 
 #import "DataViewController.h"
 #import "MyOutLineViewController.h"
+#import "PDFParser.h"
 
 #define FPK_REUSABLE_VIEW_NONE 0
 #define FPK_REUSABLE_VIEW_SEARCH 1
@@ -86,63 +87,17 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 
 @synthesize modelController = _modelController;
 
--(id)init
-{
-    
-    //
-    //	Here we call the superclass initWithDocumentManager passing the very same MFDocumentManager
-    //	we used to initialize this class. However, since you probably want to track which document are
-    //	handling to synchronize bookmarks and the like, you can easily use your own wrapper for the MFDocumentManager
-    //	as long as you pass an instance of it to the superclass initializer.
-	
-    NSString *documentPath = [[NSBundle mainBundle]pathForResource:@"11" ofType:@"pdf"];
-    NSURL *documentUrl = [NSURL fileURLWithPath:documentPath];
-    MFDocumentManager *aDocManager = [[MFDocumentManager alloc]initWithFileUrl:documentUrl];
-    
-    
-    // This delegate has been added just to manage the links between pdfs, skip it if you just need standard visualization
-    
-	if((self = [super initWithDocumentManager:aDocManager])) {
-		[self setDocumentDelegate:self];
-        [self setAutoMode:MFDocumentAutoModeOverflow];
-        [self setAutomodeOnRotation:YES];
-//        [self setDocumentId:@"11"];   // We use the filename as an ID. You can use whaterver you like, like
-//        
-////        [self setDelegate:self];
-////        OverlayManager *ovManager = [[OverlayManager alloc] init];
-//        [self addOverlayDataSource:nil];
-//
-////        [self modelController];
-	}
-	return self;
-
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *bar = [[UIBarButtonItem alloc] init];
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    
-    // 设置导航栏背景
-    [navBar setBackgroundImage:[UIImage imageNamed:@"default.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 20)];
-    [backButton setTitle:@"不读了" forState:UIControlStateNormal];
-    [backButton setTitleColor:[UIColor colorWithRed:0.0 / 255.0 green:86.0 / 255 blue:44 / 255 alpha:1.0] forState:UIControlStateNormal];
-    [backButton setTitleColor:[UIColor colorWithRed:18.0 / 255.0 green:141.0 / 255 blue:66.0 / 255 alpha:1.0] forState:UIControlStateHighlighted];
-    [backButton setImage:[UIImage imageNamed:@"back1.png"] forState:UIControlStateNormal];
-    [backButton setImage:[UIImage imageNamed:@"back2.png"] forState:UIControlStateHighlighted];
-    [backButton addTarget:self action:@selector(ibaOutline:) forControlEvents:UIControlEventTouchDown];
-    self.navigationItem.RightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
 	// Do any additional setup after loading the view, typically from a nib.
     // Configure the page view controller and add it as a child view controller.
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     self.pageViewController.delegate = self;
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
-    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:storyboard];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -236,13 +191,13 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 		
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
 		
-        outlineVC = [[MyOutLineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
+        outlineVC = [[MyOutLineViewController alloc]initWithNibName:@"MyOutLineView" bundle:nil];
         [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 		// this array and the openentries array somewhere and set them again before present the view to the user again.
-		
-//		[outlineVC setOutlineEntries:[[self document] outline]];
+		PDFParser *pdf = [[PDFParser alloc] initWithFileName:@"11.pdf"];
+		[outlineVC setOutlineEntries:[[pdf getPDFContents] mutableCopy]];
         
         CGSize popoverContentSize = CGSizeMake(372, 530);
         
@@ -387,9 +342,29 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     return _reusablePopover;
 }
 
--(void)dismissOutlineViewController:(OutlineViewController *)ovc
+-(void)dismissMyOutlineViewController:(MyOutlineViewController *)ovc
 {
     [self dismissAlternateViewController];
+}
+
+
+-(void)myOutlineViewController:(MyOutlineViewController *)ovc didRequestPage:(NSUInteger)page
+{
+//    int page1 =[[NSNumber numberWithUnsignedInteger:page] intValue];
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:page-1 storyboard:self.storyboard];
+    NSArray *viewControllers = @[startingViewController];
+    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
+
+	
+    [self dismissAlternateViewController];
+}
+-(void)myOutlineViewController:(MyOutlineViewController *)ovc didRequestPage:(NSUInteger)page file:(NSString *)file
+{
+
+}
+-(void)myOutlineViewController:(MyOutlineViewController *)ovc didRequestDestination:(NSString *)destinationName file:(NSString *)file
+{
+
 }
 
 @end
