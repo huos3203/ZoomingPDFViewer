@@ -48,9 +48,10 @@
 #import <UIKit/UIKit.h>
 #import "MyOutlineViewControllerDelegate.h"
 #import "BookmarkViewControllerDelegate.h"
+#import "Scanner.h"
 
 @interface RootViewController : UIViewController <UIPageViewControllerDelegate,
-MyOutlineViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate>
+MyOutlineViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControllerDelegate,UISearchBarDelegate>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
@@ -61,4 +62,11 @@ MyOutlineViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControll
 - (IBAction)ibaBookmarks:(UIButton *)sender;
 
 - (IBAction)ibaOutline:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *ibSearchBar;
+
+
+
+
+@property(nonatomic,assign) CGPDFPageRef pdfPage;
 @end

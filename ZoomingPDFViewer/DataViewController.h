@@ -59,4 +59,6 @@
 @property int pageNumber;
 @property CGFloat myScale;
 
+-(void)restSearchResultColor:(NSString *)searchStr;
+
 @end

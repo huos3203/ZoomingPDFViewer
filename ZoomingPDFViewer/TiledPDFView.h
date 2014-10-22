@@ -46,7 +46,7 @@
  */
 
 #import <UIKit/UIKit.h>
-
+#import "Scanner.h"
 
 @interface TiledPDFView : UIView
 
@@ -54,7 +54,13 @@
 @property CGPDFPageRef pdfPage;
 @property CGFloat myScale;
 
+@property (nonatomic, retain) Scanner *scanner;
+@property (nonatomic, copy) NSArray *selections;
+
+
 - (id)initWithFrame:(CGRect)frame scale:(CGFloat)scale;
 - (void)setPage:(CGPDFPageRef)newPage;
+
+
 
 @end

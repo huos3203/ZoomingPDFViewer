@@ -81,9 +81,15 @@
 
 // Set the CGPDFPageRef for the view.
 - (void)setPage:(CGPDFPageRef)newPage {
-    if( self.pdfPage != NULL ) CGPDFPageRelease( self.pdfPage );
-    if( newPage != NULL ) self.pdfPage = CGPDFPageRetain( newPage );
+    if( self.pdfPage != NULL )
+        CGPDFPageRelease( self.pdfPage );
+    if( newPage != NULL )
+        self.pdfPage = CGPDFPageRetain( newPage );
+    
+    //实例化每个页面的scanner对象
+    self.scanner = [Scanner scannerWithPage:self.pdfPage];
 }
+
 
 // Draw the CGPDFPageRef into the layer at the correct scale.
 -(void)drawLayer:(CALayer*)layer inContext:(CGContextRef)context {
@@ -106,14 +112,27 @@
     CGContextScaleCTM(context, self.myScale, self.myScale);
 //    NSLog(@"%s myScale: %f, layer.bounds=%@",__PRETTY_FUNCTION__,self.myScale,NSStringFromCGRect(self.layer.bounds));
     CGContextDrawPDFPage(context, self.pdfPage);
+
+    //=========重绘着色的核心代码==========
+    if (self.selections)
+    {
+        CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
+        CGContextSetBlendMode(context, kCGBlendModeMultiply);
+        for (Selection *s in self.selections)
+        {
+            CGContextSaveGState(context);
+            CGContextConcatCTM(context, s.transform);
+            CGContextFillRect(context, s.frame);
+            CGContextRestoreGState(context);
+        }
+    }
+    //=========重绘着色的核心代码==========
     CGContextRestoreGState(context);
 }
-
 
 // Clean up.
 - (void)dealloc {
     if( self.pdfPage != NULL ) CGPDFPageRelease( self.pdfPage );
 }
-
 
 @end

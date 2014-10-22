@@ -12,7 +12,7 @@
 
 @protocol BookmarkViewControllerDelegate
 
--(NSUInteger)page;
+-(NSUInteger)pageNum;
 
 -(void)dismissBookmarkViewController:(BookmarkViewController *)bvc;
 

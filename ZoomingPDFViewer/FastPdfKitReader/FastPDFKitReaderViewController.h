@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <FastPdfKit/FastPdfKit.h>
-
-@class MFDocumentManager;
+//@class MFDocumentManager;
 
 
 @interface FastPDFKitReaderViewController : UIViewController

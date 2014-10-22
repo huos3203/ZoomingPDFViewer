@@ -54,6 +54,7 @@
 #import "PDFParser.h"
 #import "BookmarkViewController.h"
 
+#import "TiledPDFView.h"
 
 #define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
 
@@ -426,10 +427,25 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 {
     return _pdfDocument;
 }
--(NSUInteger)page
+-(NSUInteger)pageNum
 {
     DataViewController *currentViewController = self.pageViewController.viewControllers[0];
     NSUInteger indexOfCurrentViewController = [self.modelController indexOfViewController:currentViewController];
     return indexOfCurrentViewController;
 }
+
+
+#pragma mark UISearchBarDelegate
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    //搜索当前页面入口
+    DataViewController *currentViewController = self.pageViewController.viewControllers[0];
+    [currentViewController restSearchResultColor:[searchBar text]];
+	[searchBar resignFirstResponder];
+}
+
+
+
+
+
 @end

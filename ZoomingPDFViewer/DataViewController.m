@@ -68,7 +68,9 @@
     self.page = CGPDFDocumentGetPage( self.pdf, self.pageNumber );
     NSLog(@"self.page==NULL? %@",self.page==NULL?@"yes":@"no");
 
-    if( self.page != NULL ) CGPDFPageRetain( self.page );
+    if( self.page != NULL )
+        CGPDFPageRetain( self.page );
+    
     [self.scrollView setPDFPage:self.page];
 }
 
@@ -82,9 +84,12 @@
     NSLog(@"%s scrollView.zoomScale=%f",__PRETTY_FUNCTION__,self.scrollView.zoomScale);
 }
 
+//每次更新UI,都调用该方法
 -(void)viewDidLayoutSubviews {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    [self restoreScale];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        NSLog(@"%s",__PRETTY_FUNCTION__);
+        [self restoreScale];
+    }
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
@@ -96,6 +101,7 @@
     }
 }
 
+//iPad双页面
 -(void)restoreScale {
     // Called on orientation change.
     // We need to zoom out and basically reset the scrollview to look right in two-page spline view.
@@ -109,7 +115,22 @@
     self.scrollView.PDFScale = self.myScale;
     self.scrollView.tiledPDFView.bounds = self.view.bounds;
     self.scrollView.tiledPDFView.myScale = self.myScale;
+    
     [self.scrollView.tiledPDFView.layer setNeedsDisplay];
+}
+
+
+//搜索结果着色
+-(void)restSearchResultColor:(NSString *)searchStr
+{
+    NSArray *selections=nil;
+    //获取当前搜索界面
+    TiledPDFView *tileView = self.scrollView.tiledPDFView;
+    //获取搜索到的内容数组
+    selections = [tileView.scanner select:searchStr];
+    [tileView setSelections:selections];
+    //重绘当前页面，给搜索数据着色
+    [tileView.layer setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {

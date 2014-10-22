@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1437F93C19F7993E008FA191 /* CMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F90819F7993E008FA191 /* CMap.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F93D19F7993E008FA191 /* Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F90A19F7993E008FA191 /* Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F93E19F7993E008FA191 /* FontCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F90C19F7993E008FA191 /* FontCollection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F93F19F7993E008FA191 /* FontDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F90E19F7993E008FA191 /* FontDescriptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94019F7993E008FA191 /* FontFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91019F7993E008FA191 /* FontFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94119F7993E008FA191 /* CIDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91419F7993E008FA191 /* CIDFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94219F7993E008FA191 /* CIDType0Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91619F7993E008FA191 /* CIDType0Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94319F7993E008FA191 /* CIDType2Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91819F7993E008FA191 /* CIDType2Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94419F7993E008FA191 /* CompositeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91A19F7993E008FA191 /* CompositeFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94519F7993E008FA191 /* Type0Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91C19F7993E008FA191 /* Type0Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94619F7993E008FA191 /* MMType1Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F91F19F7993E008FA191 /* MMType1Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94719F7993E008FA191 /* SimpleFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92119F7993E008FA191 /* SimpleFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94819F7993E008FA191 /* TrueTypeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92319F7993E008FA191 /* TrueTypeFont.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94919F7993E008FA191 /* Type1Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92519F7993E008FA191 /* Type1Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94A19F7993E008FA191 /* Type3Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92719F7993E008FA191 /* Type3Font.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94B19F7993E008FA191 /* RenderingState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92A19F7993E008FA191 /* RenderingState.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94C19F7993E008FA191 /* RenderingStateStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92C19F7993E008FA191 /* RenderingStateStack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94D19F7993E008FA191 /* pdfScannerCallbacks.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1437F92E19F7993E008FA191 /* pdfScannerCallbacks.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94E19F7993E008FA191 /* Scanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F93019F7993E008FA191 /* Scanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F94F19F7993E008FA191 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F93319F7993E008FA191 /* Selection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1437F95019F7993E008FA191 /* StringDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F93619F7993E008FA191 /* StringDetector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8422129C19F273AD00D98B3C /* FastPDFKitReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422129B19F273AD00D98B3C /* FastPDFKitReaderViewController.m */; };
 		842212A519F280C700D98B3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212A419F280C700D98B3C /* AVFoundation.framework */; };
 		842212A919F2812800D98B3C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212A819F2812800D98B3C /* MediaPlayer.framework */; };
@@ -34,18 +55,60 @@
 		C4F7336519215B5A009F63EC /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7335A19215B5A009F63EC /* ModelController.m */; };
 		C4F7336619215B5A009F63EC /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7335C19215B5A009F63EC /* PDFScrollView.m */; };
 		C4F7336819215B5A009F63EC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7336019215B5A009F63EC /* RootViewController.m */; };
-		C4F7336919215B5A009F63EC /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7336219215B5A009F63EC /* TiledPDFView.m */; };
+		C4F7336919215B5A009F63EC /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7336219215B5A009F63EC /* TiledPDFView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C4F7337719215B72009F63EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F7336A19215B72009F63EC /* Default-568h@2x.png */; };
 		C4F7337819215B72009F63EC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F7336B19215B72009F63EC /* Default.png */; };
 		C4F7337919215B72009F63EC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4F7336C19215B72009F63EC /* Default@2x.png */; };
 		C4F7337A19215B72009F63EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4F7336D19215B72009F63EC /* InfoPlist.strings */; };
 		C4F7337B19215B72009F63EC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F7336F19215B72009F63EC /* MainStoryboard_iPad.storyboard */; };
 		C4F7337C19215B72009F63EC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F7337119215B72009F63EC /* MainStoryboard_iPhone.storyboard */; };
-		C4F7337E19215B72009F63EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7337419215B72009F63EC /* main.m */; };
+		C4F7337E19215B72009F63EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F7337419215B72009F63EC /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C4F7338119215C25009F63EC /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = C4F7338019215C25009F63EC /* ReadMe.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1437F90719F7993E008FA191 /* CMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMap.h; sourceTree = "<group>"; };
+		1437F90819F7993E008FA191 /* CMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMap.m; sourceTree = "<group>"; };
+		1437F90919F7993E008FA191 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
+		1437F90A19F7993E008FA191 /* Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Font.m; sourceTree = "<group>"; };
+		1437F90B19F7993E008FA191 /* FontCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontCollection.h; sourceTree = "<group>"; };
+		1437F90C19F7993E008FA191 /* FontCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontCollection.m; sourceTree = "<group>"; };
+		1437F90D19F7993E008FA191 /* FontDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontDescriptor.h; sourceTree = "<group>"; };
+		1437F90E19F7993E008FA191 /* FontDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontDescriptor.m; sourceTree = "<group>"; };
+		1437F90F19F7993E008FA191 /* FontFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontFile.h; sourceTree = "<group>"; };
+		1437F91019F7993E008FA191 /* FontFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontFile.m; sourceTree = "<group>"; };
+		1437F91319F7993E008FA191 /* CIDFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIDFont.h; sourceTree = "<group>"; };
+		1437F91419F7993E008FA191 /* CIDFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIDFont.m; sourceTree = "<group>"; };
+		1437F91519F7993E008FA191 /* CIDType0Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIDType0Font.h; sourceTree = "<group>"; };
+		1437F91619F7993E008FA191 /* CIDType0Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIDType0Font.m; sourceTree = "<group>"; };
+		1437F91719F7993E008FA191 /* CIDType2Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIDType2Font.h; sourceTree = "<group>"; };
+		1437F91819F7993E008FA191 /* CIDType2Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIDType2Font.m; sourceTree = "<group>"; };
+		1437F91919F7993E008FA191 /* CompositeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompositeFont.h; sourceTree = "<group>"; };
+		1437F91A19F7993E008FA191 /* CompositeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositeFont.m; sourceTree = "<group>"; };
+		1437F91B19F7993E008FA191 /* Type0Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type0Font.h; sourceTree = "<group>"; };
+		1437F91C19F7993E008FA191 /* Type0Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type0Font.m; sourceTree = "<group>"; };
+		1437F91E19F7993E008FA191 /* MMType1Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMType1Font.h; sourceTree = "<group>"; };
+		1437F91F19F7993E008FA191 /* MMType1Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMType1Font.m; sourceTree = "<group>"; };
+		1437F92019F7993E008FA191 /* SimpleFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFont.h; sourceTree = "<group>"; };
+		1437F92119F7993E008FA191 /* SimpleFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFont.m; sourceTree = "<group>"; };
+		1437F92219F7993E008FA191 /* TrueTypeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrueTypeFont.h; sourceTree = "<group>"; };
+		1437F92319F7993E008FA191 /* TrueTypeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrueTypeFont.m; sourceTree = "<group>"; };
+		1437F92419F7993E008FA191 /* Type1Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type1Font.h; sourceTree = "<group>"; };
+		1437F92519F7993E008FA191 /* Type1Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type1Font.m; sourceTree = "<group>"; };
+		1437F92619F7993E008FA191 /* Type3Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type3Font.h; sourceTree = "<group>"; };
+		1437F92719F7993E008FA191 /* Type3Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type3Font.m; sourceTree = "<group>"; };
+		1437F92919F7993E008FA191 /* RenderingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingState.h; sourceTree = "<group>"; };
+		1437F92A19F7993E008FA191 /* RenderingState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderingState.m; sourceTree = "<group>"; };
+		1437F92B19F7993E008FA191 /* RenderingStateStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingStateStack.h; sourceTree = "<group>"; };
+		1437F92C19F7993E008FA191 /* RenderingStateStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderingStateStack.m; sourceTree = "<group>"; };
+		1437F92E19F7993E008FA191 /* pdfScannerCallbacks.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = pdfScannerCallbacks.mm; sourceTree = "<group>"; };
+		1437F92F19F7993E008FA191 /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		1437F93019F7993E008FA191 /* Scanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scanner.m; sourceTree = "<group>"; };
+		1437F93219F7993E008FA191 /* Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selection.h; sourceTree = "<group>"; };
+		1437F93319F7993E008FA191 /* Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selection.m; sourceTree = "<group>"; };
+		1437F93519F7993E008FA191 /* StringDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringDetector.h; sourceTree = "<group>"; };
+		1437F93619F7993E008FA191 /* StringDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringDetector.m; sourceTree = "<group>"; };
+		1437F93719F7993E008FA191 /* StringDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringDetectorDelegate.h; sourceTree = "<group>"; };
 		8422129A19F273AD00D98B3C /* FastPDFKitReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastPDFKitReaderViewController.h; path = ZoomingPDFViewer/FastPdfKitReader/FastPDFKitReaderViewController.h; sourceTree = SOURCE_ROOT; };
 		8422129B19F273AD00D98B3C /* FastPDFKitReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastPDFKitReaderViewController.m; path = ZoomingPDFViewer/FastPdfKitReader/FastPDFKitReaderViewController.m; sourceTree = SOURCE_ROOT; };
 		842212A419F280C700D98B3C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +185,128 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1437F90019F7993E008FA191 /* TextSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1437F90519F7993E008FA191 /* PDFCore */,
+			);
+			name = TextSearch;
+			path = ZoomingPDFViewer/TextSearch;
+			sourceTree = SOURCE_ROOT;
+		};
+		1437F90519F7993E008FA191 /* PDFCore */ = {
+			isa = PBXGroup;
+			children = (
+				1437F90619F7993E008FA191 /* Font */,
+				1437F92819F7993E008FA191 /* RenderingState */,
+				1437F92D19F7993E008FA191 /* Scanner */,
+				1437F93119F7993E008FA191 /* Selection */,
+				1437F93419F7993E008FA191 /* StringDetector */,
+			);
+			path = PDFCore;
+			sourceTree = "<group>";
+		};
+		1437F90619F7993E008FA191 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1437F90719F7993E008FA191 /* CMap.h */,
+				1437F90819F7993E008FA191 /* CMap.m */,
+				1437F90919F7993E008FA191 /* Font.h */,
+				1437F90A19F7993E008FA191 /* Font.m */,
+				1437F90B19F7993E008FA191 /* FontCollection.h */,
+				1437F90C19F7993E008FA191 /* FontCollection.m */,
+				1437F90D19F7993E008FA191 /* FontDescriptor.h */,
+				1437F90E19F7993E008FA191 /* FontDescriptor.m */,
+				1437F90F19F7993E008FA191 /* FontFile.h */,
+				1437F91019F7993E008FA191 /* FontFile.m */,
+				1437F91119F7993E008FA191 /* Subtypes */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		1437F91119F7993E008FA191 /* Subtypes */ = {
+			isa = PBXGroup;
+			children = (
+				1437F91219F7993E008FA191 /* CompositeFonts */,
+				1437F91D19F7993E008FA191 /* SimpleFonts */,
+			);
+			path = Subtypes;
+			sourceTree = "<group>";
+		};
+		1437F91219F7993E008FA191 /* CompositeFonts */ = {
+			isa = PBXGroup;
+			children = (
+				1437F91319F7993E008FA191 /* CIDFont.h */,
+				1437F91419F7993E008FA191 /* CIDFont.m */,
+				1437F91519F7993E008FA191 /* CIDType0Font.h */,
+				1437F91619F7993E008FA191 /* CIDType0Font.m */,
+				1437F91719F7993E008FA191 /* CIDType2Font.h */,
+				1437F91819F7993E008FA191 /* CIDType2Font.m */,
+				1437F91919F7993E008FA191 /* CompositeFont.h */,
+				1437F91A19F7993E008FA191 /* CompositeFont.m */,
+				1437F91B19F7993E008FA191 /* Type0Font.h */,
+				1437F91C19F7993E008FA191 /* Type0Font.m */,
+			);
+			path = CompositeFonts;
+			sourceTree = "<group>";
+		};
+		1437F91D19F7993E008FA191 /* SimpleFonts */ = {
+			isa = PBXGroup;
+			children = (
+				1437F91E19F7993E008FA191 /* MMType1Font.h */,
+				1437F91F19F7993E008FA191 /* MMType1Font.m */,
+				1437F92019F7993E008FA191 /* SimpleFont.h */,
+				1437F92119F7993E008FA191 /* SimpleFont.m */,
+				1437F92219F7993E008FA191 /* TrueTypeFont.h */,
+				1437F92319F7993E008FA191 /* TrueTypeFont.m */,
+				1437F92419F7993E008FA191 /* Type1Font.h */,
+				1437F92519F7993E008FA191 /* Type1Font.m */,
+				1437F92619F7993E008FA191 /* Type3Font.h */,
+				1437F92719F7993E008FA191 /* Type3Font.m */,
+			);
+			path = SimpleFonts;
+			sourceTree = "<group>";
+		};
+		1437F92819F7993E008FA191 /* RenderingState */ = {
+			isa = PBXGroup;
+			children = (
+				1437F92919F7993E008FA191 /* RenderingState.h */,
+				1437F92A19F7993E008FA191 /* RenderingState.m */,
+				1437F92B19F7993E008FA191 /* RenderingStateStack.h */,
+				1437F92C19F7993E008FA191 /* RenderingStateStack.m */,
+			);
+			path = RenderingState;
+			sourceTree = "<group>";
+		};
+		1437F92D19F7993E008FA191 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				1437F92E19F7993E008FA191 /* pdfScannerCallbacks.mm */,
+				1437F92F19F7993E008FA191 /* Scanner.h */,
+				1437F93019F7993E008FA191 /* Scanner.m */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		1437F93119F7993E008FA191 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				1437F93219F7993E008FA191 /* Selection.h */,
+				1437F93319F7993E008FA191 /* Selection.m */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
+		1437F93419F7993E008FA191 /* StringDetector */ = {
+			isa = PBXGroup;
+			children = (
+				1437F93519F7993E008FA191 /* StringDetector.h */,
+				1437F93619F7993E008FA191 /* StringDetector.m */,
+				1437F93719F7993E008FA191 /* StringDetectorDelegate.h */,
+			);
+			path = StringDetector;
+			sourceTree = "<group>";
+		};
 		8422129D19F273B800D98B3C /* FastPdfKitReader */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +400,7 @@
 		C4C9E03A17949AAE00F56C1C /* ZoomingPDFViewer */ = {
 			isa = PBXGroup;
 			children = (
+				1437F90019F7993E008FA191 /* TextSearch */,
 				8496886719F3CA8800E8BD9A /* Bookmarks */,
 				8496885919F35B6400E8BD9A /* Node */,
 				8496885219F35B4000E8BD9A /* OutLine */,
@@ -333,18 +519,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1437F95019F7993E008FA191 /* StringDetector.m in Sources */,
+				1437F94819F7993E008FA191 /* TrueTypeFont.m in Sources */,
+				1437F94D19F7993E008FA191 /* pdfScannerCallbacks.mm in Sources */,
+				1437F94E19F7993E008FA191 /* Scanner.m in Sources */,
 				C4F7336919215B5A009F63EC /* TiledPDFView.m in Sources */,
+				1437F93E19F7993E008FA191 /* FontCollection.m in Sources */,
 				C4F7336319215B5A009F63EC /* AppDelegate.m in Sources */,
 				8496885F19F35B6400E8BD9A /* VoyeurNode.m in Sources */,
+				1437F93C19F7993E008FA191 /* CMap.m in Sources */,
 				8422129C19F273AD00D98B3C /* FastPDFKitReaderViewController.m in Sources */,
+				1437F94A19F7993E008FA191 /* Type3Font.m in Sources */,
+				1437F94019F7993E008FA191 /* FontFile.m in Sources */,
+				1437F94419F7993E008FA191 /* CompositeFont.m in Sources */,
 				C4F7336819215B5A009F63EC /* RootViewController.m in Sources */,
+				1437F93D19F7993E008FA191 /* Font.m in Sources */,
+				1437F94C19F7993E008FA191 /* RenderingStateStack.m in Sources */,
 				C4F7336619215B5A009F63EC /* PDFScrollView.m in Sources */,
+				1437F93F19F7993E008FA191 /* FontDescriptor.m in Sources */,
 				C4F7336519215B5A009F63EC /* ModelController.m in Sources */,
+				1437F94F19F7993E008FA191 /* Selection.m in Sources */,
+				1437F94319F7993E008FA191 /* CIDType2Font.m in Sources */,
 				8496885819F35B4000E8BD9A /* MyOutLineViewController.m in Sources */,
 				8496886D19F3CA8800E8BD9A /* BookmarkViewController.m in Sources */,
 				8496886219F35C7B00E8BD9A /* PDFParser.m in Sources */,
 				C4F7337E19215B72009F63EC /* main.m in Sources */,
+				1437F94B19F7993E008FA191 /* RenderingState.m in Sources */,
+				1437F94719F7993E008FA191 /* SimpleFont.m in Sources */,
+				1437F94619F7993E008FA191 /* MMType1Font.m in Sources */,
 				C4F7336419215B5A009F63EC /* DataViewController.m in Sources */,
+				1437F94919F7993E008FA191 /* Type1Font.m in Sources */,
+				1437F94119F7993E008FA191 /* CIDFont.m in Sources */,
+				1437F94219F7993E008FA191 /* CIDType0Font.m in Sources */,
+				1437F94519F7993E008FA191 /* Type0Font.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +658,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = ZoomingPDFViewer;
 				PROVISIONING_PROFILE = "01532176-3d79-4fd5-b197-cc479e230b18";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -471,6 +679,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = ZoomingPDFViewer;
 				PROVISIONING_PROFILE = "01532176-3d79-4fd5-b197-cc479e230b18";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
