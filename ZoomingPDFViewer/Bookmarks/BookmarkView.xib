@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -36,15 +36,15 @@
                                 <action selector="actionAddBookmark:" destination="-1" id="26"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Edit" id="9">
+                        <barButtonItem title="编辑" id="9">
                             <connections>
                                 <action selector="actionToggleMode:" destination="-1" id="27"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="33"/>
-                        <barButtonItem title="Bookmarks" style="plain" id="30"/>
+                        <barButtonItem title="书签" style="plain" id="30"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="32"/>
-                        <barButtonItem systemItem="done" id="11">
+                        <barButtonItem title="隐藏" id="11">
                             <connections>
                                 <action selector="actionDone:" destination="-1" id="28"/>
                             </connections>

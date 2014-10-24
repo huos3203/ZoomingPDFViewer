@@ -43,7 +43,7 @@
 	NSMutableArray * items = [[toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
-	[button setTitle:@"隐藏"];
+	[button setTitle:@"保存"];
 	
 	[toolbar setItems:items];
 	
@@ -57,7 +57,7 @@
 	NSMutableArray * items = [[toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
-	[button setTitle:@"修改"];
+	[button setTitle:@"编辑"];
 	
 	[toolbar setItems:items];
 	

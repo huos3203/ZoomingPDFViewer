@@ -30,9 +30,9 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="12"/>
-                        <barButtonItem title="Contents" style="plain" id="13"/>
+                        <barButtonItem title="目录" style="plain" id="13"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="14"/>
-                        <barButtonItem systemItem="cancel" id="6">
+                        <barButtonItem title="隐藏" id="6">
                             <connections>
                                 <action selector="actionBack:" destination="-1" id="53Q-br-BtN"/>
                             </connections>

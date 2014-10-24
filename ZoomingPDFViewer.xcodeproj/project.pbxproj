@@ -28,7 +28,6 @@
 		1437F94E19F7993E008FA191 /* Scanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F93019F7993E008FA191 /* Scanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1437F94F19F7993E008FA191 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F93319F7993E008FA191 /* Selection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1437F95019F7993E008FA191 /* StringDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437F93619F7993E008FA191 /* StringDetector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		14FA27F219F9FFD600098848 /* MyOutLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FA27F119F9FFD600098848 /* MyOutLineView.xib */; };
 		14FA27F419FA059600098848 /* OutlineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FA27F319FA059600098848 /* OutlineView.xib */; };
 		8422129C19F273AD00D98B3C /* FastPDFKitReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422129B19F273AD00D98B3C /* FastPDFKitReaderViewController.m */; };
 		842212A519F280C700D98B3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842212A419F280C700D98B3C /* AVFoundation.framework */; };
@@ -110,7 +109,6 @@
 		1437F93519F7993E008FA191 /* StringDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringDetector.h; sourceTree = "<group>"; };
 		1437F93619F7993E008FA191 /* StringDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringDetector.m; sourceTree = "<group>"; };
 		1437F93719F7993E008FA191 /* StringDetectorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringDetectorDelegate.h; sourceTree = "<group>"; };
-		14FA27F119F9FFD600098848 /* MyOutLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOutLineView.xib; sourceTree = "<group>"; };
 		14FA27F319FA059600098848 /* OutlineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutlineView.xib; sourceTree = "<group>"; };
 		8422129A19F273AD00D98B3C /* FastPDFKitReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FastPDFKitReaderViewController.h; path = ZoomingPDFViewer/FastPdfKitReader/FastPDFKitReaderViewController.h; sourceTree = SOURCE_ROOT; };
 		8422129B19F273AD00D98B3C /* FastPDFKitReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FastPDFKitReaderViewController.m; path = ZoomingPDFViewer/FastPdfKitReader/FastPDFKitReaderViewController.m; sourceTree = SOURCE_ROOT; };
@@ -322,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				14FA27F319FA059600098848 /* OutlineView.xib */,
-				14FA27F119F9FFD600098848 /* MyOutLineView.xib */,
 				8496885419F35B4000E8BD9A /* MyOutLineViewController.h */,
 				8496885519F35B4000E8BD9A /* MyOutLineViewController.m */,
 				8496885619F35B4000E8BD9A /* MyOutlineViewControllerDelegate.h */,
@@ -499,7 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F7337C19215B72009F63EC /* MainStoryboard_iPhone.storyboard in Resources */,
-				14FA27F219F9FFD600098848 /* MyOutLineView.xib in Resources */,
 				84404BDC19F20D8B00DB464D /* Manual.pdf in Resources */,
 				C4F7337919215B72009F63EC /* Default@2x.png in Resources */,
 				C4F7337A19215B72009F63EC /* InfoPlist.strings in Resources */,
