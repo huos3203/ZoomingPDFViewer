@@ -7,8 +7,6 @@
 //
 
 #import "BookmarkViewController.h"
-//#import "DocumentViewController.h"
-//#import "ReaderViewController.h"
 
 #define KEY_FROM_DOCUMENT_ID(doc_id) [NSString stringWithFormat:@"bookmarks_%@",(doc_id)]
 
@@ -45,7 +43,7 @@
 	NSMutableArray * items = [[toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
-	[button setTitle:@"Done"];
+	[button setTitle:@"隐藏"];
 	
 	[toolbar setItems:items];
 	
@@ -59,7 +57,7 @@
 	NSMutableArray * items = [[toolbar items]mutableCopy];
     
 	UIBarButtonItem * button = [items objectAtIndex:1];
-	[button setTitle:@"Edit"];
+	[button setTitle:@"修改"];
 	
 	[toolbar setItems:items];
 	
@@ -94,12 +92,23 @@
 	
 	NSUInteger currentPage = [delegate pageNum];
 	
+//    [bookmarks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//        NSInteger pageNum = [obj integerValue];
+//        if (pageNum == currentPage) {
+//            return;
+//        }
+//    }];
+	for (int i = 0; i<[bookmarks count]; i++) {
+        if (currentPage == [bookmarks[i] integerValue]) {
+            return;
+        }
+    }
 	[bookmarks addObject:[NSNumber numberWithUnsignedInteger:currentPage]];
-	
     [self saveBookmarks];
-    
-	[bookmarksTableView reloadData];
+    [bookmarksTableView reloadData];
 }
+
+
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

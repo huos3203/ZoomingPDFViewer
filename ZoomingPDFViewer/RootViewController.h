@@ -62,6 +62,7 @@ MyOutlineViewControllerDelegate,UIPopoverControllerDelegate,BookmarkViewControll
 - (IBAction)ibaBookmarks:(UIButton *)sender;
 
 - (IBAction)ibaOutline:(UIButton *)sender;
+-(IBAction)ibaBack:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *ibSearchBar;
 

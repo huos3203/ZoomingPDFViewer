@@ -22,11 +22,11 @@
                     <navigationItem key="navigationItem" id="bJU-UZ-PPT">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="aAF-Uf-FUW">
                             <view key="customView" contentMode="scaleToFill" id="tag-Db-1cE">
-                                <rect key="frame" x="16" y="5" width="170" height="33"/>
+                                <rect key="frame" x="16" y="5" width="200" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzO-Kh-Pp6">
-                                        <rect key="frame" x="20" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="85" y="2" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="目录">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,13 +36,23 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd0-ak-beo">
-                                        <rect key="frame" x="111" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="150" y="2" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="书签">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="ibaBookmarks:" destination="2" eventType="touchUpInside" id="run-t4-QLp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8Z-Ay-URR">
+                                        <rect key="frame" x="20" y="2" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="不读">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ibaBack:" destination="2" eventType="touchUpInside" id="T2i-6R-ZWl"/>
                                         </connections>
                                     </button>
                                 </subviews>

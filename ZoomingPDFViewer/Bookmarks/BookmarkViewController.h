@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BookmarkViewControllerDelegate.h"
-
 #define STATUS_NORMAL 0
 #define STATUS_EDITING 1
 
@@ -34,6 +33,7 @@
 -(IBAction)actionToggleMode:(id)sender;
 -(IBAction)actionAddBookmark:(id)sender;
 -(IBAction)actionDone:(id)sender;
+
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *editButton;
 @property (nonatomic, retain) IBOutlet UITableView *bookmarksTableView;

@@ -63,12 +63,15 @@
 #define FPK_REUSABLE_VIEW_OUTLINE 3
 #define FPK_REUSABLE_VIEW_BOOKMARK 4
 
+#define FPK_READHISTORY_PAGENUM(doc_id) [NSString stringWithFormat:@"READHISTORY_PAGENUM_%@",(doc_id)]
 
 static const NSInteger FPKReusableViewNone = FPK_REUSABLE_VIEW_NONE;
 static const NSInteger FPKReusableViewSearch = FPK_REUSABLE_VIEW_SEARCH;
 static const NSInteger FPKReusableViewText = FPK_REUSABLE_VIEW_TEXT;
 static const NSInteger FPKReusableViewOutline = FPK_REUSABLE_VIEW_OUTLINE;
 static const NSInteger FPKReusableViewBookmarks = FPK_REUSABLE_VIEW_BOOKMARK;
+
+
 
 
 #define FPK_SEARCH_VIEW_MODE_MINI 0
@@ -102,7 +105,9 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     self.pageViewController.delegate = self;
 
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
-    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:0 storyboard:self.storyboard];
+    //获取阅读的历史记录
+    NSInteger pageNum = [[NSUserDefaults standardUserDefaults] integerForKey:FPK_READHISTORY_PAGENUM(_pdfDocument)];
+    DataViewController *startingViewController = [self.modelController viewControllerAtIndex:pageNum storyboard:self.storyboard];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:NULL];
 
@@ -466,6 +471,14 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
         [VcArr[1] restSearchResultColor:txt];
     }
 }
+
+#pragma mark 记录历史记录
+-(IBAction)ibaBack:(id)sender
+{
+    //不读时，记录当前页面
+    [[NSUserDefaults standardUserDefaults] setInteger:[self pageNum] forKey:FPK_READHISTORY_PAGENUM(_pdfDocument)];
+}
+
 
 
 @end

@@ -20,4 +20,8 @@
 
 -(NSString *)documentId;
 
+
+////声明一个协议：利用Bookmark功能，记录历史记录
+//-(void)addReadHistory;
+
 @end
