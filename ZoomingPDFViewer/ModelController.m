@@ -48,7 +48,6 @@
 #import "ModelController.h"
 
 #import "DataViewController.h"
-
 /*
  A controller object that manages a simple model -- a collection of month names.
  
@@ -83,6 +82,7 @@
     DataViewController *dataViewController = [storyboard instantiateViewControllerWithIdentifier:@"DataViewController"];
     dataViewController.pageNumber = (int)index + 1;
     dataViewController.pdf = self.pdf;
+    dataViewController._searchData = _searchTxt;
     return dataViewController;
 }
 

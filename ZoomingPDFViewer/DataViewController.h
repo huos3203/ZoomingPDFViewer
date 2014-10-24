@@ -52,12 +52,17 @@
 
 @interface DataViewController : UIViewController
 
+//当翻页或旋转时，对每个页面搜索并着色使用
+@property(nonatomic,strong)NSString *_searchData;
+
 @property (strong) IBOutlet PDFScrollView* scrollView;
 
 @property CGPDFDocumentRef pdf;
 @property CGPDFPageRef page;
 @property int pageNumber;
 @property CGFloat myScale;
+
+
 
 -(void)restSearchResultColor:(NSString *)searchStr;
 

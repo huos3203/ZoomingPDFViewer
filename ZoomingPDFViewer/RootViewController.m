@@ -56,7 +56,6 @@
 
 #import "TiledPDFView.h"
 
-#define MF_BUNDLED_BUNDLE(x) [NSBundle bundleWithPath:[[NSBundle mainBundle]pathForResource:(x) ofType:@"bundle"]]
 
 #define FPK_REUSABLE_VIEW_NONE 0
 #define FPK_REUSABLE_VIEW_SEARCH 1
@@ -139,6 +138,7 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
     if (!_modelController) {
         _modelController = [[ModelController alloc] init];
     }
+    
     return _modelController;
 }
 
@@ -196,9 +196,10 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 	if (currentReusableView != FPK_REUSABLE_VIEW_OUTLINE) {
 		
         currentReusableView = FPK_REUSABLE_VIEW_OUTLINE;
-		
-        outlineVC = [[MyOutLineViewController alloc]initWithNibName:@"MyOutLineView" bundle:nil];
+		outlineVC = [[MyOutLineViewController alloc]initWithNibName:@"OutlineView" bundle:MF_BUNDLED_BUNDLE(@"FPKReaderBundle")];
         [outlineVC setDelegate:self];
+//        outlineVC = [[MyOutLineViewController alloc]initWithNibName:@"MyOutLineView" bundle:nil];
+//        [outlineVC setDelegate:self];
 		
 		// We set the inital entries, that is the top level ones as the initial one. You can save them by storing
 		// this array and the openentries array somewhere and set them again before present the view to the user again.
@@ -438,14 +439,33 @@ static const NSInteger FPKSearchViewModeFull = FPK_SEARCH_VIEW_MODE_FULL;
 #pragma mark UISearchBarDelegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    //搜索当前页面入口
-    DataViewController *currentViewController = self.pageViewController.viewControllers[0];
-    [currentViewController restSearchResultColor:[searchBar text]];
+    [self DoSearch:[searchBar text]];
 	[searchBar resignFirstResponder];
 }
 
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [self DoSearch:[searchBar text]];
+    [searchBar resignFirstResponder];
+}
 
-
+-(void)DoSearch:(NSString *)txt
+{
+    //赋值成全局变量，以便翻页，或旋转屏幕时，重新查询时使用。
+    if ([txt length]==0) {
+        txt = nil;
+    }
+    _modelController.searchTxt = txt;
+    //搜索当前页面入口
+    NSArray *VcArr = self.pageViewController.viewControllers;
+    DataViewController *currentViewController = VcArr[0];
+    [currentViewController restSearchResultColor:txt];
+    
+    //iPad双屏情况时，着色第二页面
+    if ([VcArr count] == 2) {
+        [VcArr[1] restSearchResultColor:txt];
+    }
+}
 
 
 @end

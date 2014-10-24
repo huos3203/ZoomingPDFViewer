@@ -69,6 +69,9 @@
     if (subContents && subContents.count > 0) {
 //        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
 //        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
+
         [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
     } else {
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -210,6 +213,10 @@
 	
 	if([openOutlineEntries containsObject:dict]) {
 		
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        [[cell imageView]setImage:[UIImage imageWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangleright",@"png")]];
+        
 		// Remove the entry selected and all of its visible children from the outlineEntries array
 		// and update the tableview by removing the cell at the corresponding indexPaths.
 		
@@ -227,6 +234,13 @@
 		[openOutlineEntries removeObject:dict];
 		
 	} else {
+        
+        
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        UIImage *aImage = [[UIImage alloc]initWithContentsOfFile:MF_BUNDLED_RESOURCE(@"FPKReaderBundle",@"img_outline_triangledown",@"png")];
+        
+        [[cell imageView]setImage:aImage];
         
 		// Add the visible children of the selected entry to the outlineEntries array and update
 		// the tableview by addind the cell at the corresponding indexPaths
@@ -294,7 +308,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-//	[self setMyOutlineTableView:nil];
+	[self setOutlineTableView:nil];
 	
 }
 @end

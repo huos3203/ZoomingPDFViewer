@@ -92,7 +92,7 @@
 
 -(IBAction)actionAddBookmark:(id)sender {
 	
-	NSUInteger currentPage = [delegate page];
+	NSUInteger currentPage = [delegate pageNum];
 	
 	[bookmarks addObject:[NSNumber numberWithUnsignedInteger:currentPage]];
 	

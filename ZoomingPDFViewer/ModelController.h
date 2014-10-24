@@ -54,6 +54,8 @@
 - (DataViewController *)viewControllerAtIndex:(NSUInteger)index storyboard:(UIStoryboard *)storyboard;
 - (NSUInteger)indexOfViewController:(DataViewController *)viewController;
 @property CGPDFDocumentRef pdf;
-@property int numberOfPages; 
+@property int numberOfPages;
+
+@property(nonatomic,strong)NSString *searchTxt;
 
 @end

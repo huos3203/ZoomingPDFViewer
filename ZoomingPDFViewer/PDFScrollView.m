@@ -196,6 +196,12 @@
 
     // Create a new tiled PDF View at the new scale
     [self replaceTiledPDFViewWithFrame:self.oldTiledPDFView.frame];
+    
+    //缩放过程中，保持搜索到的内容处于高亮状态
+    [self.tiledPDFView setSelections:self.oldTiledPDFView.selections];
+    //重绘当前页面，给搜索数据着色
+    [self.oldTiledPDFView.layer setNeedsDisplay];
+    
 }
 
 -(void)replaceTiledPDFViewWithFrame:(CGRect)frame {

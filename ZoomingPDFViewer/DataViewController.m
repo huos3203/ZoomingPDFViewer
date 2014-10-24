@@ -51,10 +51,15 @@
 #import "TiledPDFView.h"
 
 @interface DataViewController ()
+{
+    NSArray *_selections;
+}
 
 @end
 
 @implementation DataViewController
+
+@synthesize _searchData;
 
 -(void) dealloc {
     if( self.page != NULL ) CGPDFPageRelease( self.page );
@@ -90,6 +95,9 @@
         NSLog(@"%s",__PRETTY_FUNCTION__);
         [self restoreScale];
     }
+    if (_searchData) {
+        [self restSearchResultColor:_searchData];
+    }
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
@@ -115,7 +123,6 @@
     self.scrollView.PDFScale = self.myScale;
     self.scrollView.tiledPDFView.bounds = self.view.bounds;
     self.scrollView.tiledPDFView.myScale = self.myScale;
-    
     [self.scrollView.tiledPDFView.layer setNeedsDisplay];
 }
 
@@ -123,12 +130,15 @@
 //搜索结果着色
 -(void)restSearchResultColor:(NSString *)searchStr
 {
-    NSArray *selections=nil;
     //获取当前搜索界面
     TiledPDFView *tileView = self.scrollView.tiledPDFView;
     //获取搜索到的内容数组
-    selections = [tileView.scanner select:searchStr];
-    [tileView setSelections:selections];
+    if (searchStr) {
+        _selections = [tileView.scanner select:searchStr];
+    }else{
+        _selections= nil;
+    }
+    [tileView setSelections:_selections];
     //重绘当前页面，给搜索数据着色
     [tileView.layer setNeedsDisplay];
 }
